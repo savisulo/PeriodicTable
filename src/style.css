@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+  }
+
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.periodic-table {
+    background-color: aquamarine;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(18, 74px);
+    grid-template-rows: repeat(10, 74px);
+    grid-gap: 4px;
+    margin: auto;
+}
+
+.element {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+.atomicnumber, .name {
+    font-size: 0.6rem;
+    
+}
