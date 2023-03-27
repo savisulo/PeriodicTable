@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 import Element from './components/Element'
 import CategoryIdentifier from './components/CategoryIdentifier'
+
+import elementService from './services/elements'
 
 const App = () => {
   const [elements, setElements] = useState([])
@@ -19,14 +20,12 @@ const App = () => {
   ]
   
   useEffect(() => {
-    axios
-      .get('http://localhost:3001/elements')
-      .then(response => {
-        setElements(response.data)
+    elementService
+      .getAll()
+      .then(initialElements => {
+        setElements(initialElements)
       })
   }, [])
-
-  console.log(elements.map(e => e.category))
 
   return (
     <>
